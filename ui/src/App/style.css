@@ -3,12 +3,11 @@
   padding: 30px;
   margin: 50px auto;
   border-radius: 5px;
-  border: 1px solid #0f0;
+  border: 1px solid #859900;
 }
 
 .title {
   color: #d33682;
-  font-family: Frutiger;
   border-bottom: 1px solid #93a1a1;
   padding-bottom: 10px;
 }
@@ -35,6 +34,7 @@
 
 .form-label {
   color: #268bd2;
+  font-size: 14px;
 }
 
 .submit-but {
