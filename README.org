@@ -1,0 +1,44 @@
+* Form Markup
+** Scherma
+*** Company
+- id
+- name
+- website
+- logo
+- established_in
+- registration_info_id
+
+- type
+  - IT Services
+  - IT Product
+  - Other
+
+- locations
+  - id
+  - company_id
+  - address
+  - coordinates
+
+*** Registration Info
+- id
+- ref_no
+- company_id
+- registered_name
+- state
+- incorporation_date
+
+*** Employee
+- id
+- name
+- status
+- salary
+- role
+
+  Possible roles:
+
+  - Developer
+  - HR
+  - CEO
+  - CTO
+
+- rating
