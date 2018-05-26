@@ -1,18 +1,44 @@
-* Form Markup
-** Scherma
+* Chandigarh IT Industry
+
+
+** MVP (Minimal Viable Product)
+*** TODO Create company form
+
+*** TODO Create comapny API
+#+BEGIN_SRC http
+POST /company
+#+END_SRC
+
+*** TODO Create company listing API
+
+*** TODO Create company listing view
+
+*** TODO Create company details API
+
+*** TODO Create company details view
+
+*** TODO Add delete option in company details view
+
+*** TODO Add edit option in copany details view
+
+*** TODO Create update-company API
+
+
+
+** Schema
 *** Company
 - id
 - name
 - website
 - logo
 - established_in
-- registration_info_id
 
 - type
   - IT Services
   - IT Product
   - Other
 
+- registration_info_id
 - locations
   - id
   - company_id

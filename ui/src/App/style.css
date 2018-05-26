@@ -1,0 +1,48 @@
+.create-company-form {
+  max-width: 35em;
+  padding: 30px;
+  margin: 50px auto;
+  border-radius: 5px;
+  border: 1px solid #0f0;
+}
+
+.title {
+  color: #d33682;
+  font-family: Frutiger;
+  border-bottom: 1px solid #93a1a1;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.form-control {
+  width: 100%;
+  border: 1px solid #b58900;
+  padding: 10px;
+  outline: none;
+  color: #6c71c4;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.select {
+  height: 2.6em;
+}
+
+.form-label {
+  color: #268bd2;
+}
+
+.submit-but {
+  background: #b58900;
+  border-radius: 4px;
+  margin-left: 5em;
+  width: 65%;
+  color: #1e6e95;
+  font-weight: 700;
+  font-size: 18px;
+}
