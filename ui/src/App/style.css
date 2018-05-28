@@ -26,6 +26,7 @@
   color: #6c71c4;
   margin-top: 5px;
   font-size: 15px;
+  border-radius: 4px;
 }
 
 .select {
@@ -45,4 +46,5 @@
   color: #1e6e95;
   font-weight: 700;
   font-size: 18px;
+  cursor: pointer;
 }
