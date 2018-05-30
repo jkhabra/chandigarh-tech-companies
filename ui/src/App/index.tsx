@@ -29,12 +29,43 @@ class App extends Component {
   };
 
   public render() {
-    console.log(this.state.companies); // tslint:disable-line
+    const company = this.state.companies;
+
     return (
       <div className="container">
+        <div className="c-title">Companies List</div>
+        <div className="company-container">
+          {company.map((c: any, index) => {
+            return (
+              <div className="c-frame" key={c.id}>
+                <div className="c-name">
+                  <span>Name : </span>
+                  {c.name}
+                </div>
+                <div className="c-web">
+                  <span>Website : </span>
+                  {c.website}
+                </div>
+                <div className="c-est">
+                  <span>Established : </span>
+                  {c.established}
+                </div>
+                <div className="c-type">
+                  <span>Type : </span>
+                  {c.type}
+                </div>
+                <div className="c-logo">
+                  <img className="c-logo" src={c.logo} alt="company's logo" />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
         <div className="company-form">
           <CompanyForm />
         </div>
+
         <div className="employee-form">
           <EmployeeForm />
         </div>

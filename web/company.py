@@ -40,7 +40,7 @@ def get_companies():
     db_data = db_session.query(Company).all()
 
     for i in db_data:
-        c_dict = {'name':i.name, 'logo':i.logo, 'established':i.established, 'website':i.website, 'type':i.type}
+        c_dict = {'id': i.id, 'name':i.name, 'logo':i.logo, 'established':i.established, 'website':i.website, 'type':i.type}
         companies.append(c_dict)
 
     data = {
