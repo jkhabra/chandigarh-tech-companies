@@ -17,7 +17,18 @@ class CompanyForm extends Component {
 
   public handleSubmit = (e: any) => {
     e.preventDefault();
+
     this.sendData();
+
+    this.setState({
+      established: "",
+      logo: "",
+      name: "",
+      type: "other",
+      website: ""
+    });
+
+    console.log(this.state); // tslint:disable-line
   };
 
   public sendData = () => {
@@ -46,6 +57,7 @@ class CompanyForm extends Component {
             name="name"
             className="form-control"
             placeholder="Name"
+            value={this.state.name}
             onChange={this.changeFieldValue("name")}
           />
         </div>
@@ -55,6 +67,7 @@ class CompanyForm extends Component {
           <input
             type="text"
             name="logo"
+            value={this.state.logo}
             className="form-control"
             onChange={this.changeFieldValue("logo")}
             placeholder="Logo"
@@ -66,6 +79,7 @@ class CompanyForm extends Component {
             type="text"
             name="established"
             className="form-control"
+            value={this.state.established}
             onChange={this.changeFieldValue("established")}
             placeholder="Established In"
           />
@@ -76,6 +90,7 @@ class CompanyForm extends Component {
             type="text"
             name="website"
             className="form-control"
+            value={this.state.website}
             onChange={this.changeFieldValue("website")}
             placeholder="Website"
           />

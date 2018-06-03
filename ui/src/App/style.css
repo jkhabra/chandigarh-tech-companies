@@ -65,11 +65,12 @@
   border: 1px solid #839496;
   width: 30em;
   display: grid;
-  grid-template-columns: 30% 35% 35%;
+  grid-template-columns: 20% 35% 45%;
   grid-template-rows: 50% 50%;
-  grid-row-gap: 20px;
+  grid-row-gap: 15px;
   padding: 15px;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
+  cursor: pointer;
 }
 
 .c-name {
@@ -99,5 +100,10 @@
 .c-logo {
   grid-column: 1;
   grid-row: 1 / span 2;
-  width: 6em;
+  width: 5em;
+}
+
+.c-logo2 {
+  width: 4em;
+  height: 4em;
 }

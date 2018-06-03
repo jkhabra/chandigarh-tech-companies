@@ -55,7 +55,7 @@ class App extends Component {
                   {c.type}
                 </div>
                 <div className="c-logo">
-                  <img className="c-logo" src={c.logo} alt="company's logo" />
+                  <img className="c-logo2" src={c.logo} alt="company's logo" />
                 </div>
               </div>
             );
