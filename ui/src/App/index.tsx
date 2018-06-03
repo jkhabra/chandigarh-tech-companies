@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Component } from "react";
 import CompanyForm from "../CompanyForm";
+import CompanyList from "../CompanyList";
 import EmployeeForm from "../EmployeeForm";
 import "./style.css";
 
@@ -36,29 +37,7 @@ class App extends Component {
         <div className="c-title">Companies List</div>
         <div className="company-container">
           {company.map((c: any, index) => {
-            return (
-              <div className="c-frame" key={c.id}>
-                <div className="c-name">
-                  <span>Name : </span>
-                  {c.name}
-                </div>
-                <div className="c-web">
-                  <span>Website : </span>
-                  {c.website}
-                </div>
-                <div className="c-est">
-                  <span>Established : </span>
-                  {c.established}
-                </div>
-                <div className="c-type">
-                  <span>Type : </span>
-                  {c.type}
-                </div>
-                <div className="c-logo">
-                  <img className="c-logo2" src={c.logo} alt="company's logo" />
-                </div>
-              </div>
-            );
+            return <CompanyList key={c.id} company={c} />;
           })}
         </div>
 
