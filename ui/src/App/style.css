@@ -1,3 +1,38 @@
+.topnav {
+  overflow: hidden;
+  background-color: #002b36;
+  border: 1px solid #002b36;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 60px;
+}
+
+.add {
+  float: right;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: #268bd2;
+  background: transparent;
+}
+
+.add:hover {
+  border-bottom: 2px solid #dc322f;
+  border-radius: 15px;
+  color: #268bd2;
+}
+
+.add.active {
+  border-bottom: 2px solid #dc322f;
+  border-radius: 15px;
+  color: #d33682;
+  float: left;
+  margin-left: 2em;
+}
+
+/* form styles */
+
 .create-company-form {
   max-width: 35em;
   padding: 30px;
@@ -47,63 +82,4 @@
   font-weight: 700;
   font-size: 18px;
   cursor: pointer;
-}
-
-/* styles for company list */
-
-.c-title {
-  font-size: 30px;
-  color: #d33682;
-  margin: 2em 2em 1em 2em;
-}
-
-.company-container {
-  margin-left: 5em;
-}
-
-.c-frame {
-  border: 1px solid #839496;
-  width: 30em;
-  display: grid;
-  grid-template-columns: 20% 35% 45%;
-  grid-template-rows: 50% 50%;
-  grid-row-gap: 15px;
-  padding: 15px;
-  margin-bottom: 1.5em;
-  cursor: pointer;
-}
-
-.c-name {
-  color: #268bd2;
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.c-web {
-  color: #cb4b16;
-  grid-column: 3;
-  grid-row: 1;
-}
-
-.c-est {
-  color: #6c71c4;
-  grid-row: 2;
-  grid-column: 3;
-}
-
-.c-type {
-  color: #b58900;
-  grid-row: 2;
-  grid-column: 2;
-}
-
-.c-logo {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  width: 5em;
-}
-
-.c-logo2 {
-  width: 4em;
-  height: 4em;
 }

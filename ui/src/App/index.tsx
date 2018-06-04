@@ -34,6 +34,18 @@ class App extends Component {
 
     return (
       <div className="container">
+        <div className="topnav">
+          <a className="active add" href="#home">
+            Home
+          </a>
+          <a className="add" href="#news">
+            Add Company
+          </a>
+          <a className="add" href="#contact">
+            Add Employee
+          </a>
+        </div>
+
         <div className="c-title">Companies List</div>
         <div className="company-container">
           {company.map((c: any, index) => {
