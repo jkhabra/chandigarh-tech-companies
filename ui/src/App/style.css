@@ -19,7 +19,7 @@
 
 .add:hover {
   border-bottom: 2px solid #dc322f;
-  border-radius: 15px;
+  border-radius: 30px;
   color: #268bd2;
 }
 
@@ -27,6 +27,9 @@
   border-bottom: 2px solid #dc322f;
   border-radius: 15px;
   color: #d33682;
+}
+
+.home {
   float: left;
   margin-left: 2em;
 }
@@ -36,7 +39,7 @@
 .create-company-form {
   max-width: 35em;
   padding: 30px;
-  margin: 50px auto;
+  margin: 8em auto;
   border-radius: 5px;
   border: 1px solid #859900;
 }

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Component } from "react";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, NavLink, Route } from "react-router-dom";
 import CompanyForm from "../CompanyForm/";
 import CompanyList from "../CompanyList";
 import EmployeeForm from "../EmployeeForm";
@@ -43,15 +43,28 @@ class App extends Component {
       <Router>
         <div className="container">
           <div className="topnav">
-            <Link to={`/`} className="active add">
+            <NavLink
+              exact={true}
+              to="/"
+              activeClassName="active"
+              className="add home"
+            >
               Home
-            </Link>
-            <Link to={`/employee-form`} className="add">
+            </NavLink>
+            <NavLink
+              to="/employee-form"
+              activeClassName="active"
+              className="add"
+            >
               Add Employee
-            </Link>
-            <Link to={`/company-form`} className="add">
+            </NavLink>
+            <NavLink
+              to="/company-form"
+              activeClassName="active"
+              className="add"
+            >
               Add Company
-            </Link>
+            </NavLink>
           </div>
 
           <Route exact={true} path="/company-form" component={CompanyForm} />
