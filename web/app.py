@@ -12,9 +12,10 @@ def show():
     return '<h1>hello there</h1>'
 
 
-@app.route('/companies', methods=['POST', 'GET'])
-def company_api():
+@app.route('/companies', methods=['POST', 'GET'], defaults={'company_id':None})
+@app.route('/companies/<int:company_id>')
+def company_api(company_id):
     if request.method == 'POST':
         return create_company()
     if request.method == 'GET':
-        return get_companies()
+        return get_companies(company_id)

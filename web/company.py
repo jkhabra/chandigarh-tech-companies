@@ -33,14 +33,24 @@ def create_company():
        'status': 'success'
    })
 
-def get_companies():
+def get_companies(company_id):
     db_session = get_session()
     companies = []
     total = db_session.query(Company).count()
-    db_data = db_session.query(Company).all()
+    skip = int(request.args.get('skip', 0))
+    limit = int(request.args.get('limit', 30))
+    query = db_session.query(Company)
+
+    if company_id:
+       query = query.filter(Company.id == company_id)
+    else:
+       query = query.slice(skip, limit).limit(limit)
+
+    db_data = query.all()
 
     for i in db_data:
-        c_dict = {'id': i.id, 'name':i.name, 'logo':i.logo, 'established':i.established, 'website':i.website, 'type':i.type}
+        c_dict = {'id': i.id, 'name':i.name, 'logo':i.logo, \
+                  'established':i.established, 'website':i.website, 'type':i.type}
         companies.append(c_dict)
 
     data = {

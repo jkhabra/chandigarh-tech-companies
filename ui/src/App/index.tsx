@@ -32,6 +32,7 @@ class App extends Component {
 
   public render(): any {
     const company = this.state.companies;
+
     const ComList = () => (
       <div className="company-container">
         {company.map((c: any, index) => {
