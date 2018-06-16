@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Component } from "react";
-import CompanyForm from "../CompanyForm";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import CompanyForm from "../CompanyForm/";
 import CompanyList from "../CompanyList";
 import EmployeeForm from "../EmployeeForm";
 import "./style.css";
@@ -29,38 +30,35 @@ class App extends Component {
       });
   };
 
-  public render() {
+  public render(): any {
     const company = this.state.companies;
-
-    return (
-      <div className="container">
-        <div className="topnav">
-          <a className="active add" href="#home">
-            Home
-          </a>
-          <a className="add" href="#news">
-            Add Company
-          </a>
-          <a className="add" href="#contact">
-            Add Employee
-          </a>
-        </div>
-
-        <div className="c-title">Companies List</div>
-        <div className="company-container">
-          {company.map((c: any, index) => {
-            return <CompanyList key={c.id} company={c} />;
-          })}
-        </div>
-
-        <div className="company-form">
-          <CompanyForm />
-        </div>
-
-        <div className="employee-form">
-          <EmployeeForm />
-        </div>
+    const ComList = () => (
+      <div className="company-container">
+        {company.map((c: any, index) => {
+          return <CompanyList key={c.id} company={c} />;
+        })}
       </div>
+    );
+    return (
+      <Router>
+        <div className="container">
+          <div className="topnav">
+            <Link to={`/`} className="active add">
+              Home
+            </Link>
+            <Link to={`/employee-form`} className="add">
+              Add Employee
+            </Link>
+            <Link to={`/company-form`} className="add">
+              Add Company
+            </Link>
+          </div>
+
+          <Route exact={true} path="/company-form" component={CompanyForm} />
+          <Route exact={true} path="/employee-form" component={EmployeeForm} />
+          <Route exact={true} path="/" component={ComList} />
+        </div>
+      </Router>
     );
   }
 }
