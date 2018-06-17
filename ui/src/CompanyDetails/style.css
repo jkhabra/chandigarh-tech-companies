@@ -1,0 +1,8 @@
+.detail-box {
+  border: 1px solid red;
+  height: 32em;
+  width: 53%;
+  position: fixed;
+  right: 15px;
+  top: 5em;
+}
