@@ -19,13 +19,13 @@
 
 .add:hover {
   border-bottom: 2px solid #dc322f;
-  border-radius: 30px;
+  border-radius: 2px;
   color: #268bd2;
 }
 
 .add.active {
   border-bottom: 2px solid #dc322f;
-  border-radius: 15px;
+  border-radius: 2px;
   color: #d33682;
 }
 
