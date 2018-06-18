@@ -27,10 +27,17 @@ class CompanyDetails extends Component<IProps> {
       });
   };
 
-  public componentDidMount() {
+  public componentDidMount(){
+    this.getCompany(this.props.match.params.id)
+  }
+
+  public componentDidUpdate(prevProps:any) {
     const companyId = this.props.match.params.id;
 
-    this.getCompany(companyId);
+    if (companyId !== prevProps.match.params.id) {
+      this.getCompany(companyId);
+    }
+
   }
 
   public render(): any {
@@ -39,29 +46,30 @@ class CompanyDetails extends Component<IProps> {
       return null;
     }
 
+    const company = this.state.company[0]
     return (
       <div className="detail-box">
-        <div className="c-frame">
-          <div className="c-name">
-            <span>Name : </span>
-            {this.state.company.name}
+        <div className='over-view'>Overview</div>
+        <div className="d-frame">
+          <div className="detail-item d-name">
+            <span className='d-title'>Name : </span>
+            {company.name}
           </div>
-          <div className="c-web">
-            <span>Website : </span>
-            {this.state.company.website}
+          <div className="detail-item d-web">
+            <span className='d-title'>Website : </span>
+            {company.website}
           </div>
-          <div className="c-est">
-            <span>Established : </span>
-            {this.state.company.established}
+          <div className="detail-item d-est">
+            <span className='d-title'>Established : </span>
+            {company.established}
           </div>
-          <div className="c-type">
-            <span>Type : </span>
-            {this.state.company.type}
-          </div>
-          <div className="c-logo">
-            <img className="c-logo2" src="logog.png" alt="company's logo" />
+          <div className="detail-item d-type">
+            <span className='d-title'>Type: </span> {company.type}
           </div>
         </div>
+          <div className="d-logo">
+            <img className="d-logo2" src={company.logo} alt="company's logo" />
+          </div>
       </div>
     );
   }

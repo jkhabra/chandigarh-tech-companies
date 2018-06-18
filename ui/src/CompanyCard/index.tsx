@@ -36,14 +36,14 @@ class CompanyCard extends Component{
         {company.map((c: any, index) =>{
            return (
              <Link to={`/company/${c.id}`} key={c.id} className='card-link'>
-             <div className="c-frame">
-             <div className="c-name">
-             <span>Name : </span>
-             {c.name}
-             </div>
-             <div className="c-web">
-             <span>Website : </span>
-             {c.website}
+               <div className="c-frame">
+                 <div className="c-name">
+                   <span>Name : </span>
+                   {c.name}
+                 </div>
+                 <div className="c-web">
+                   <span>Website : </span>
+                   {c.website}
                  </div>
                  <div className="c-est">
                    <span>Established : </span>
@@ -57,13 +57,12 @@ class CompanyCard extends Component{
                    <img className="c-logo2" src={c.logo} alt="company's logo" />
                  </div>
                </div>
-
-               <Switch>
-                 <Route exact={true} path="/company/:id" component={CompanyDetails} />
-               </Switch>
              </Link>
            )
         })}
+        <Switch>
+          <Route exact={true} path="/company/:id" component={CompanyDetails} />
+        </Switch>
       </div>
     );
   }
