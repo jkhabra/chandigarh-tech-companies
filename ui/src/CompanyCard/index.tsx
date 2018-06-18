@@ -1,41 +1,70 @@
 import * as React from "react";
 import { Component } from "react";
-import { Link } from "react-router-dom";
-import { ICompany } from "../types";
+import { Link, Route, Switch} from "react-router-dom";
+import CompanyDetails from "../CompanyDetails"
 import "./style.css";
 
-interface ICompanyListProps {
-  company: ICompany;
-}
+class CompanyCard extends Component{
+  public state = {
+    companies: []
+  };
 
-class CompanyCard extends Component<ICompanyListProps> {
+  public componentDidMount() {
+    this.getData();
+  }
+
+  public getData = () => {
+    const url = "http://localhost:5000/companies";
+
+    fetch(url, { method: "GET" })
+      .then(res => res.json())
+      .then(res => {
+        const companies = res.data;
+
+        this.setState({ companies });
+      })
+      .catch(err => {
+        console.warn("Error while featching", err); // tslint:disable-line
+      });
+  };
+
   public render() {
-    const c = this.props.company;
+    const company = this.state.companies;
 
     return (
-      <Link to={`/company/${c.id}`}>
-        <div className="c-frame" key={c.id}>
-          <div className="c-name">
-            <span>Name : </span>
-            {c.name}
-          </div>
-          <div className="c-web">
-            <span>Website : </span>
-            {c.website}
-          </div>
-          <div className="c-est">
-            <span>Established : </span>
-            {c.established}
-          </div>
-          <div className="c-type">
-            <span>Type : </span>
-            {c.type}
-          </div>
-          <div className="c-logo">
-            <img className="c-logo2" src={c.logo} alt="company's logo" />
-          </div>
-        </div>
-      </Link>
+      <div className='company-container'>
+        {company.map((c: any, index) =>{
+           return (
+             <Link to={`/company/${c.id}`} key={c.id} className='card-link'>
+             <div className="c-frame">
+             <div className="c-name">
+             <span>Name : </span>
+             {c.name}
+             </div>
+             <div className="c-web">
+             <span>Website : </span>
+             {c.website}
+                 </div>
+                 <div className="c-est">
+                   <span>Established : </span>
+                   {c.established}
+                 </div>
+                 <div className="c-type">
+                   <span>Type : </span>
+                   {c.type}
+                 </div>
+                 <div className="c-logo">
+                   <img className="c-logo2" src={c.logo} alt="company's logo" />
+                 </div>
+               </div>
+
+               <Switch>
+                 <Route exact={true} path="/company/:id" component={CompanyDetails} />
+               </Switch>
+             </Link>
+           )
+        })}
+      </div>
     );
   }
 }
