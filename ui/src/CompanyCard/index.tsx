@@ -37,20 +37,16 @@ class CompanyCard extends Component{
            return (
              <Link to={`/company/${c.id}`} key={c.id} className='card-link'>
                <div className="c-frame">
-                 <div className="c-name">
-                   <span>Name : </span>
+                 <div className="c-name" title='Name'>
                    {c.name}
                  </div>
-                 <div className="c-web">
-                   <span>Website : </span>
+                 <div className="c-web" title='Website'>
                    {c.website}
                  </div>
-                 <div className="c-est">
-                   <span>Established : </span>
+                 <div className="c-est" title='Established'>
                    {c.established}
                  </div>
-                 <div className="c-type">
-                   <span>Type : </span>
+                 <div className="c-type" title='Type'>
                    {c.type}
                  </div>
                  <div className="c-logo">

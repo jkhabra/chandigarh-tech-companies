@@ -18,7 +18,7 @@ def create_company():
        if not db_session.query(Company).filter(Company.name == data['name']).all():
 
            new_company = Company(name=data['name'], logo=data['logo'], \
-                 established=data['established'], website=data['website'], type=data['type'])
+           established=data['established'], website=data['website'], type=data['type'], detail=data['detail'])
 
            db_session.add(new_company)
            db_session.commit()
@@ -50,7 +50,7 @@ def get_companies(company_id):
 
     for i in db_data:
         c_dict = {'id': i.id, 'name':i.name, 'logo':i.logo, \
-                  'established':i.established, 'website':i.website, 'type':i.type}
+                  'established':i.established, 'website':i.website, 'type':i.type, 'detail':i.detail}
         companies.append(c_dict)
 
     data = {

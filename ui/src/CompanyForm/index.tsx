@@ -3,6 +3,7 @@ import { Component } from "react";
 
 class CompanyForm extends Component {
   public state = {
+    detail: "",
     established: "",
     logo: "",
     name: "",
@@ -21,6 +22,7 @@ class CompanyForm extends Component {
     this.sendData();
 
     this.setState({
+      detail: "",
       established: "",
       logo: "",
       name: "",
@@ -107,6 +109,17 @@ class CompanyForm extends Component {
             <option value="IT Product">IT Product</option>
             <option value="Other">Other</option>
           </select>
+        </div>
+
+        <div className="row form-group">
+          <label className="form-label">Details</label>
+          <textarea
+            name="detail"
+            className="form-control"
+            value={this.state.detail}
+            onChange={this.changeFieldValue("detail")}
+            placeholder="Details"
+          />
         </div>
 
         <div className="row form-group">
