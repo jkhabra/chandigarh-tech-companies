@@ -13,7 +13,7 @@ class Company(Base):
     website = Column(String(150), nullable=False)
     established = Column(String(150))
     type = Column(String(100), nullable=False)
-    detail = Column(String(1000))
+    detail = Column(String(1000), default="Not")
     create_at = Column(DATETIME, default=datetime.datetime.utcnow)
     update_at = Column(DATETIME, default=datetime.datetime.utcnow)
 

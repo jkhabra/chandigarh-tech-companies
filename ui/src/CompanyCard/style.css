@@ -15,10 +15,10 @@
 
 .c-frame {
   border: 1px solid #839496;
-  width: 95%;
+  width: 85%;
   display: grid;
-  grid-template-columns: 25% 35% 40%;
-  grid-template-rows: 50% 50%;
+  grid-template-columns: 30% 45% 25%;
+  grid-template-rows: .5em 1em 1em;
   grid-row-gap: 15px;
   padding: 15px;
   margin-bottom: 1.5em;
@@ -28,9 +28,9 @@
 .c-name {
   color: #268bd2;
   cursor: auto;
-  grid-column: 2;
+  grid-column: 2/span 3;
   grid-row: 1;
-  width: 135px;
+  height: 25px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -39,8 +39,9 @@
 .c-web {
   color: #cb4b16;
   cursor: auto;
-  grid-column: 3;
-  grid-row: 1;
+  grid-column: 2/span 3;
+  height: 25px;
+  grid-row: 2;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -49,22 +50,23 @@
 .c-est {
   color: #6c71c4;
   cursor: auto;
-  grid-row: 2;
-  grid-column: 3;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  grid-row: 3;
+  grid-column: 2;
+  width: 65px;
+  height: 20px;
 }
 
 .c-type {
   color: #b58900;
   cursor: auto;
-  grid-row: 2;
-  grid-column: 2;
+  grid-row: 3;
+  grid-column: 3;
   width: 135px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-left: -4em;
+  height: 20px;
 }
 
 .c-logo {

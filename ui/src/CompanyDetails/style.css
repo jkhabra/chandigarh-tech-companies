@@ -1,10 +1,9 @@
 .detail-box {
   border: 1px solid #2aa198;
-  height: 32em;
   width: 53%;
   position: fixed;
   right: 15px;
-  top: 5em;
+  top: 6em;
 }
 
 .over-view {
@@ -17,15 +16,25 @@
 .detail-item {
   margin-bottom: 8px;
   color: #2aa198;
-  border: 1px solid #cb4b16;
-  padding: 30px;
+ /* border: 1px solid #cb4b16;*/
+  padding: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+.d-box{
+  border: 1px solid #586e75;
+  line-height: 2;
+  white-space: normal;
+}
+
+.sd{
+  display: block;
+}
+
 .d-frame {
-  width: 70%;
+  width: 95%;
   padding: 20px;
 }
 
@@ -35,15 +44,17 @@
 }
 
 .d-logo {
+  background: #ffffff;
   width: 7em;
   height: 7em;
-  margin-right: 8%;
-  float: right;
-  margin-top: -15em;
-  border: 1.5px solid #cb4b16;
+  position: fixed;
+  right: 5em;
+  top: 14em;
+  border: 1px solid #fff;
   border-radius: 50%;
 }
 .d-logo2 {
+  background: #ffffff;
   width: 4.8em;
   height: 4.8em;
   margin: 15%;

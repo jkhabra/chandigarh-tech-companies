@@ -16,12 +16,14 @@ def create_company():
 
    try:
        if not db_session.query(Company).filter(Company.name == data['name']).all():
+          if data['detail'] == '':
+             data['detail'] = 'Details are not available'
 
-           new_company = Company(name=data['name'], logo=data['logo'], \
-           established=data['established'], website=data['website'], type=data['type'], detail=data['detail'])
+          new_company = Company(name=data['name'], logo=data['logo'], \
+            established=data['established'], website=data['website'], type=data['type'], detail=data['detail'])
 
-           db_session.add(new_company)
-           db_session.commit()
+          db_session.add(new_company)
+          db_session.commit()
    except Exception as error:
        return jsonify({
            'status': 'error',
@@ -49,9 +51,9 @@ def get_companies(company_id):
     db_data = query.all()
 
     for i in db_data:
-        c_dict = {'id': i.id, 'name':i.name, 'logo':i.logo, \
-                  'established':i.established, 'website':i.website, 'type':i.type, 'detail':i.detail}
-        companies.append(c_dict)
+       c_dict = {'id': i.id, 'name':i.name, 'logo':i.logo, \
+                 'established':i.established, 'website':i.website, 'type':i.type, 'detail':i.detail}
+       companies.append(c_dict)
 
     data = {
         'total': total,
