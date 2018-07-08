@@ -9,11 +9,11 @@ class Company(Base):
     __tablename__ = 'company'
     id = Column(Integer, primary_key=True)
     name = Column(String(150), nullable=False)
-    logo = Column(String(500))
-    website = Column(String(150), nullable=False)
-    established = Column(String(150))
-    type = Column(String(100), nullable=False)
-    detail = Column(String(1000), default="Not")
+    logo = Column(String(500), default='http://www.youdial.in/ydlogo/nologo.png')
+    website = Column(String(150))
+    established = Column(String(150), default='Unknown')
+    type = Column(String(100), default='Unknown')
+    detail = Column(String(1000), default="Not Available")
     create_at = Column(DATETIME, default=datetime.datetime.utcnow)
     update_at = Column(DATETIME, default=datetime.datetime.utcnow)
 
